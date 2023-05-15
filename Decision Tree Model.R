@@ -65,3 +65,4 @@ precision <- cm$byClass["Pos Pred Value"]
 print(precision)
 recall <- cm$byClass["Sensitivity"]
 print(recall)
+

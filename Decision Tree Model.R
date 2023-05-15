@@ -15,7 +15,10 @@ dim(bank_clean)
 summary(bank_clean)
 bank_clean$y <- factor(bank_clean$y)
 
-set.seed(777)#Why do you need to set seed?
+##is used to set the random number generator's seed value, 
+##which is used to generate random numbers or to split a data set randomly into training and test sets.
+
+set.seed(777)
 
 train.index <- sample(1:nrow(bank_clean), 0.7*nrow(bank_clean))
 bank_clean.train <- bank_clean[train.index,]

@@ -6,7 +6,7 @@ library(rpart.plot)
 
 columns <- c("age","marital","education","housing", "y")
 
-bank_clean<-bank[columns]
+bank_clean<-banktest1[columns]
 
 str(bank_clean)
 dim(bank_clean)
@@ -23,7 +23,7 @@ bank_clean.test <- bank_clean[-train.index,]
 dim(bank_clean.test)
 
 # Default decision tree model
-# Builds a decision tree from the iris dataset to predict
+# Builds a decision tree from the banktest1 dataset to predict
 # species given all other columns as predictors
 bank_clean.tree <- rpart(y~.,data=bank_clean.train, method="class",control =rpart.control(minsplit =1,minbucket=6, cp=0))
 

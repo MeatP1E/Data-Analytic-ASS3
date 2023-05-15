@@ -32,24 +32,6 @@ print(banktest1)
 View(banktest1)
 
 
-#Adding marital variable (single/divorced) with a Dummy variable 0/1
-banktest1$new_marital <- ifelse(banktest1$marital == "single", "s", 
-                                ifelse(banktest1$marital == "divorced", "d", 
-                                       ifelse(banktest1$marital == "married", "m", NA)))
-
-
-#Adding education variable with a Dummy variable 0/1
-banktest1$new_education <- ifelse(banktest1$education == "primary", "p",
-                                  ifelse(banktest1$education == "secondary", "S",
-                                         ifelse(banktest1$education == "tertiary", "t", NA)))
-
-
-#adding housing variable (yes/no) with dummy variable 0/1 
-banktest1$new_housing <- ifelse(banktest1$housing == "no", "n", "y")
-
-# Adding loan variable with a Dummy variable 0/1
-banktest1$new_loan <- ifelse(banktest1$loan == "no", "n", "y")
-
 
 # display the resulting data
 View(banktest1)

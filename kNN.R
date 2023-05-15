@@ -40,4 +40,6 @@ pr <- knn(bank_train,bank_test,cl=bank_target_category,k=13)
  accuracy <- function(x){sum(diag(x)/(sum(rowSums(x)))) * 100}
  
 accuracy(tab)
- 
+
+precision <- 
+

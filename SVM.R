@@ -1,7 +1,8 @@
 library(e1071)
-
+library(caret)
 
 bank_clean1<-bank_clean
+bank_clean1$y <- factor(bank_clean1$y)
 bank_clean1$y <- ifelse(bank_clean1$y == "yes", 1, 0)
 
 set.seed(777)
@@ -24,6 +25,7 @@ plot(svm_model, bank_clean1.train, formula)
 # Make predictions on the test data
 bank_clean1.predictions <- predict(svm_model, bank_clean1.test, type = "class")
 head(bank_clean1.predictions)
+
 
 # Create a confusion matrix
 confusion_matrix <- confusionMatrix(bank_clean1.predictions, bank_clean1.test$y)

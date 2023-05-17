@@ -1,7 +1,7 @@
 
 library(caret)  
 
-df <- bank ##load data
+df <- banktest1 ##load data
   columns <- c("age", "duration", "balance")
   bank_two <- df[columns]
   head(bank_two) ## see the studcture
@@ -40,6 +40,4 @@ pr <- knn(bank_train,bank_test,cl=bank_target_category,k=13)
  accuracy <- function(x){sum(diag(x)/(sum(rowSums(x)))) * 100}
  
 accuracy(tab)
-
-precision <- 
 

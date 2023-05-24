@@ -1,10 +1,10 @@
 
 library(caret)  
 
-df <- banktest1 ##load data
+df <- banktest1 ##load prepared data
   columns <- c("age", "duration", "balance")
   bank_two <- df[columns]
-  head(bank_two) ## see the studcture
+  head(bank_two) ## see the structure
 
 
 ##Generate a random number that is 90% of the total number of rows in dataset.
@@ -26,6 +26,7 @@ bank_test <- bank_norm[-ran,]
 bank_target_category <- bank_two[ran,1]
 ##extract 1 column if test dataset to measure the accuracy
 bank_test_category <- bank_two[-ran,1]
+
 ##load the package class
 library(class)
 ##run knn function
@@ -35,8 +36,7 @@ pr <- knn(bank_train,bank_test,cl=bank_target_category,k=13)
  ##create confusion matrix
  tab <- table(pr,bank_test_category)
  
- ##this function divides the correct predictions by total number of predictions that tell us how accurate teh model is.
- 
+ ##this function divides the correct predictions by total number of predictions that tell us how accurate the model is.
  accuracy <- function(x){sum(diag(x)/(sum(rowSums(x)))) * 100}
  
 accuracy(tab)
